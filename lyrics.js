@@ -31,7 +31,6 @@ function parseLRC(data) {
   });
 }
 
-// Şarkı ilerledikçe sözleri güncelle
 audio.addEventListener("timeupdate", () => {
   const currentTime = audio.currentTime;
   for (let i = 0; i < lyrics.length; i++) {
@@ -40,13 +39,11 @@ audio.addEventListener("timeupdate", () => {
       ps.forEach((p) => p.classList.remove("active"));
       ps[i].classList.add("active");
 
-      // Sadece lyrics kutusu içinde kaydırma yap
       const activeLine = ps[i];
       lyricsContainer.scrollTo({
         top: activeLine.offsetTop - lyricsContainer.clientHeight / 2,
         behavior: "smooth",
       });
-
       break;
     }
   }
