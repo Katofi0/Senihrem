@@ -3,7 +3,7 @@ const lyricsContainer = document.getElementById("lyrics");
 let lyrics = [];
 
 // LRC dosyasını yükle
-fetch("music/music/guliz-ayla-bahsetmem-lazim.lrc")
+fetch("music/guliz-ayla-bahsetmem-lazim.lrc")
   .then((res) => res.text())
   .then((data) => {
     parseLRC(data);
