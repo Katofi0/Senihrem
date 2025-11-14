@@ -223,6 +223,79 @@
       <div class="lyrics" id="lyrics"></div>
     </div>
 
+    <div class="love-reason-section">
+  <h1 class="love-reason-title">💖 Bugün Seni Neden Sevdiğimi Öğren 💖</h1>
+
+  <div id="loveReasonBox">
+    Bir butona bas bakalım... 🤍
+  </div>
+
+  <button class="love-button" onclick="showLoveReason()">
+    Bugün seni neden sevdiğimi öğren
+  </button>
+
+  <div class="heart-container"></div>
+</div>
+
+    <script>
+      const loveReasons = [
+"Seni seviyorum çünkü gülüşün içimi ısıtıyor.",
+"Seni seviyorum çünkü beni olduğum gibi kabul ediyorsun.",
+"Seni seviyorum çünkü aynı anda hem huzur hem heyecansın.",
+"Seni seviyorum çünkü her bakışında kalbim hızlanıyor.",
+"Seni seviyorum çünkü düşüncelerime değer veriyorsun.",
+"Seni seviyorum çünkü dünyanın en doğal halisin.",
+"Seni seviyorum çünkü yanındayken zaman duruyor.",
+"Seni seviyorum çünkü bana güven veriyorsun.",
+"Seni seviyorum çünkü birlikte her şey daha kolay.",
+"Seni seviyorum çünkü beni hep dinliyorsun.",
+"Seni seviyorum çünkü küçük şeyleri bile özel yapıyorsun.",
+"Seni seviyorum çünkü beni güldürmeyi biliyorsun.",
+"Seni seviyorum çünkü varlığın bile yeterli.",
+"Seni seviyorum çünkü gözlerin beni eve getiriyor.",
+"Seni seviyorum çünkü beni her hâlimle seviyorsun.",
+"Seni seviyorum çünkü sabrın çok güzel.",
+"Seni seviyorum çünkü hissettirdiklerin gerçek.",
+"Seni seviyorum çünkü en kötü günümde bile yanımdasın.",
+"Seni seviyorum çünkü bana kendimi iyi hissettiriyorsun.",
+"Seni seviyorum çünkü hayallerime ortak oluyorsun."
+]; // 100 taneyi istersen ekleyebilirim
+
+function showLoveReason() {
+  const box = document.getElementById("loveReasonBox");
+  const randomIndex = Math.floor(Math.random() * loveReasons.length);
+  box.style.opacity = 0;
+
+  setTimeout(() => {
+    box.textContent = loveReasons[randomIndex];
+    box.style.opacity = 1;
+  }, 150);
+
+  createHeart(); // kalp animasyonu
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.textContent = "❤️";
+
+  const x = window.innerWidth / 2 + (Math.random() * 100 - 50);
+  const y = window.innerHeight - 100;
+
+  heart.style.left = x + "px";
+  heart.style.top = y + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 2000);
+}
+
+    </script>
+
+    
+
     <!-- <div id="qr" class="qr">
       <h2>Seni Çok Seviyorum</h2>
       <br />
